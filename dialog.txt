@@ -1,0 +1,89 @@
+Initially a channel is requested from the multiplexer, this presents us with a child bus we can query.
+
+('try_lock',)
+Channel 0:unlocking channel
+('unlock',)
+('try_lock',)
+Channel 1:unlocking channel
+('unlock',)
+('try_lock',)
+Channel 2:unlocking channel
+('unlock',)
+('try_lock',)
+Channel 3:unlocking channel
+('unlock',)
+('try_lock',)
+Channel 4:unlocking channel
+('unlock',)
+('try_lock',)
+Channel 5:unlocking channel
+('unlock',)
+('try_lock',)
+Channel 6:unlocking channel
+('unlock',)
+('try_lock',)
+Channel 7:found lidar
+unlocking channel
+('unlock',)
+
+Everything from here down is just writing to the child I2C bus once the channel is acquired.
+I suspect this would only need an address-prefix.
+
+grabbing sensor
+('try_lock',)
+('write', 41, b'')
+('unlock',)
+('try_lock',)
+('write', 41, b'\x01\x0f')
+('read', 41, bytearray(b'\xea\xcc\x10'))
+('unlock',)
+('try_lock',)
+('write', 41, b'\x00-\x00\x00\x00\x01\x02\x00\x02\x08\x00\x08\x10\x01\x01\x00\x00\x00\x00\xff\x00\x0f\x00\x00\x00\x00\x00 \x0b\x00\x00\x02\n!\x00\x00\x05\x00\x00\x00\x00\xc8\x00\x008\xff\x01\x00\x08\x00\x00\x01\xcc\x0f\x01\xf1\r\x01h\x00\x80\x08\xb8\x00\x00\x00\x00\x0f\x89\x00\x00\x00\x00\x00\x00\x00\x01\x0f\r\x0e\x0e\x00\x00\x02\xc7\xff\x9b\x00\x00\x00\x01\x00\x00')
+('unlock',)
+('try_lock',)
+('write', 41, b'\x00\x87@')
+('unlock',)
+('try_lock',)
+('write', 41, b'\x001')
+('read', 41, bytearray(b'\x03'))
+('unlock',)
+('try_lock',)
+('write', 41, b'\x000')
+('read', 41, bytearray(b'\x01'))
+('unlock',)
+('try_lock',)
+('write', 41, b'\x00\x86\x01')
+('unlock',)
+('try_lock',)
+('write', 41, b'\x00\x87\x00')
+('unlock',)
+('try_lock',)
+('write', 41, b'\x00\x08\t')
+('unlock',)
+('try_lock',)
+('write', 41, b'\x00\x0b\x00')
+('unlock',)
+('try_lock',)
+('write', 41, b'\x00K')
+('read', 41, bytearray(b'\n'))
+('unlock',)
+('try_lock',)
+('write', 41, b'\x00^\x00\xad')
+('unlock',)
+('try_lock',)
+('write', 41, b'\x00a\x00\xc6')
+('unlock',)
+start measuring
+('try_lock',)
+('write', 41, b'\x00\x87@')
+('unlock',)
+record data
+check sensor ready
+('try_lock',)
+('write', 41, b'\x001')
+('read', 41, bytearray(b'\x02'))
+('unlock',)
+('try_lock',)
+('write', 41, b'\x000')
+('read', 41, bytearray(b'\x01'))
+('unlock',)
